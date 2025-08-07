@@ -428,7 +428,7 @@ Contributors who make significant impacts will be recognized in:
 - **GitHub Discussions**: General questions and feature discussions
 - **GitHub Issues**: Bug reports and specific problems  
 - **Discord/Slack**: Real-time chat (link in repository)
-- **Email**: maintainers@dynamicpdflibrary.com
+- **Email**: jdevspecialist@gmail.com
 
 ### Mentorship Program
 New contributors can request mentorship for:
