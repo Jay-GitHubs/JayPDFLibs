@@ -466,7 +466,7 @@ We are committed to providing a friendly, safe, and welcoming environment for al
 - Other conduct inappropriate in a professional setting
 
 ### Enforcement
-Report unacceptable behavior to maintainers@dynamicpdflibrary.com. All reports will be handled confidentially.
+Report unacceptable behavior to jdevspecialist@gmail.com. All reports will be handled confidentially.
 
 ## 📋 Contributor License Agreement
 
