@@ -32,7 +32,7 @@ Traditional PDF libraries often come with commercial licensing restrictions or l
 > **⚠️ Development Phase**: This library is currently under active development. See the [roadmap](#roadmap) for current progress and upcoming features.
 
 **Current Version**: 0.1.0-alpha  
-**Target Release**: Q2 2025  
+**Target Release**: Q4 2025
 
 ### ✅ Completed Features
 - [ ] Basic PDF document structure
