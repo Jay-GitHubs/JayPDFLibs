@@ -1,3 +1,7 @@
+using System.Globalization;
+using System.Collections;
+using System.Runtime.CompilerServices;
+
 namespace JayPDFLibs.Core.Document
 {
     /// <summary>
@@ -5,11 +9,13 @@ namespace JayPDFLibs.Core.Document
     /// </summary>
     public class PdfPage
     {
+        private readonly List<TextElement> _textElements;
         public PdfPage(PageSize size)
         {
             Size = size;
             Width = GetPageWidth(size);
             Height = GetPageHeight(size);
+            _textElements = new List<TextElement>();
         }
 
         /// <summary>
@@ -27,6 +33,8 @@ namespace JayPDFLibs.Core.Document
         /// </summary>
         public float Height { get; }
 
+        public IReadOnlyList<TextElement> TextElements => _textElements.AsReadOnly();
+
         /// <summary>
         /// Adds text to the page.
         /// </summary>
@@ -38,8 +46,16 @@ namespace JayPDFLibs.Core.Document
         /// <returns>This page for method chaining</returns>
         public PdfPage AddText(string text, float x, float y, string? fontName = null, float fontSize = 12)
         {
-            // TODO: Implement text rendering
-            Console.WriteLine($"Adding text: '{text}' at ({x}, {y})");
+            var textElement = new TextElement
+            {
+                Text = text ?? string.Empty,
+                X = x,
+                Y = y,
+                FontName = fontName ?? "Helvetica",
+                FontSize = fontSize
+            };
+
+            _textElements.Add(textElement);
             return this;
         }
 
@@ -68,5 +84,15 @@ namespace JayPDFLibs.Core.Document
         A4,
         Letter,
         A3
+    }
+
+    public class TextElement
+    {
+        public string Text { get; set; } = string.Empty;
+        public float X { get; set; }
+        public float Y { get; set; }
+        public string FontName { get; set; } = "Helvetica";
+        public float FontSize { get; set; } = 12;
+
     }
 }

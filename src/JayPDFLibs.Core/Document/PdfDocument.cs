@@ -1,3 +1,5 @@
+using JayPDFLibs.Core.Pdf;
+
 namespace JayPDFLibs.Core.Document
 {
     /// <summary>
@@ -13,6 +15,11 @@ namespace JayPDFLibs.Core.Document
             _pages = new List<PdfPage>();
             CreationDate = DateTime.Now;
         }
+
+        /// <summary>
+        /// Gets the pages in the document.
+        /// </summary>
+        public IReadOnlyList<PdfPage> Pages => _pages.AsReadOnly();
 
         /// <summary>
         /// Gets the number of pages in the document.
@@ -62,10 +69,8 @@ namespace JayPDFLibs.Core.Document
         /// <param name="stream">The stream to save to</param>
         public void SaveToStream(Stream stream)
         {
-            // TODO: Implement PDF writing logic
-            // For now, write a basic PDF header
-            var header = "%PDF-1.4\n"u8.ToArray();
-            stream.Write(header);
+            var writer = new PdfWriter(stream);
+            writer.WritePdf(this);
         }
 
         public void Dispose()
